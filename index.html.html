@@ -1,0 +1,146 @@
+!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Preguntas y Recuerdos ??</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('https://i.ibb.co/0jHGQwL/fondo-romantico.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Georgia', serif;
+      text-align: center;
+      color: #fff;
+    }
+
+    h1 {
+      margin-top: 40px;
+      font-size: 3em;
+      color: #ffe6f0;
+      text-shadow: 0 0 15px #ff66cc;
+    }
+
+    #pregunta, #galeria {
+      font-size: 1.6em;
+      background: rgba(0, 0, 0, 0.6);
+      display: inline-block;
+      padding: 20px 30px;
+      border-radius: 15px;
+      min-height: 100px;
+      margin-top: 30px;
+      text-shadow: 0 0 10px #ffb6c1;
+      max-width: 80%;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 30px;
+      background-color: #ff69b4;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 10px #ff1493;
+    }
+
+    button:hover {
+      background-color: #ff3399;
+    }
+
+    .img-foto {
+      width: 250px;
+      height: auto;
+      margin: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px #fff;
+    }
+
+    #galeria {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>?? Momentos Contigo ??</h1>
+
+  <div id="pregunta">Haz clic para comenzar las preguntas...</div><br>
+
+  <button id="btnPregunta" onclick="mostrarPregunta()">?? Siguiente pregunta</button>
+  <button id="btnFotos" onclick="mostrarFotos()" style="display:none;">?? Ver fotos</button>
+
+  <div id="galeria">
+    <h2>?? Nuestros Recuerdos</h2>
+    <img class="img-foto" src="fotos.pnj.jpg" alt="foto1">
+    <img class="img-foto" src="fotos2.pnj.jpg" alt="foto2">
+    <img class="img-foto" src="fotos3.pnj.jpg" alt="foto3">
+
+<h2> TE AMO MI COSITA TAN BELLEA </h2>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página 1</title>
+</head>
+<body>
+
+    <h1> Y esta carta es para ti </h1>
+    <a href="carta.html">
+        <button>Siguiente</button>
+    </a>
+
+</body>
+</html>
+
+
+  </div>
+
+ <audio id="musicaTriste" autoplay loop hidden>
+    <source src="wwd.mp3juice.blog - Kevin Kaarl - Colapso (320 KBps) (1).mp3" type="audio/mpeg">
+  </audio>
+
+
+
+  <script>
+    const preguntas = [
+      "Que fue lo primero que pensaste de mi?",
+      "Cual es tu recuerdo favorito con nosotros?",
+      "Que cancion te recuerda a nuestro amor?",
+      "Si pudieramos viajar ahora, a donde iriamos?",
+      "Que es lo que mas te gusta de mi?",
+      "Te imaginas un futuro conmigo?",
+      "Cual fue el momento mas romantico que vivimos?",
+      "Que nombre te gustaria que tenga nuestra mascota?",
+      "Como seria nuestro hogar ideal?",
+      "Que es lo que nunca te atreveras a decirme, pero hoy si?",
+      "Cuul fue el dia ms feliz a mi lado?",
+      "Te gustaria que repitamos nuestra primera cita?",
+      "Que parte de mi cuerpo te gusta mas?",
+      "Si me escribieras una carta, que me dirias?",
+      "Que es lo mas loco que harias por amor?"
+    ];
+
+    let indice = 0;
+
+    function mostrarPregunta() {
+      if (indice < preguntas.length) {
+        document.getElementById("pregunta").textContent = preguntas[indice];
+        indice++;
+        if (indice === preguntas.length) {
+          document.getElementById("btnPregunta").style.display = "none";
+          document.getElementById("btnFotos").style.display = "inline-block";
+        }
+      }
+    }
+
+    function mostrarFotos() {
+      document.getElementById("pregunta").style.display = "none";
+      document.getElementById("btnFotos").style.display = "none";
+      document.getElementById("galeria").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>

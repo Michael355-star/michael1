@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>¿Me perdonas?</title>
+  <style>
+    body {
+      background-color: #ffe6f0;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 40px;
+      color: #d63384;
+    }
+
+    .contenedor, .final {
+      background-color: #fff0f5;
+      padding: 30px;
+      border-radius: 20px;
+      display: inline-block;
+      box-shadow: 0 0 20px rgba(214, 51, 132, 0.4);
+    }
+
+    img {
+      width: 250px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #d63384;
+    }
+
+    h1, h2 {
+      margin-top: 20px;
+    }
+
+    .botones {
+      margin-top: 25px;
+      position: relative;
+      height: 100px;
+    }
+
+    button {
+      font-size: 1.2em;
+      padding: 12px 30px;
+      margin: 10px;
+      border: 2px solid #d63384;
+      background-color: #ffe6f0;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #noBtn {
+      position: absolute;
+    }
+
+    .final {
+      display: none;
+    }
+
+    #mensaje {
+      font-size: 1.5em;
+      color: #b10074;
+      margin-top: 20px;
+      animation: aparecer 1s ease-in-out;
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Música triste -->
+  <audio id="musicaTriste" autoplay loop hidden>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Música feliz -->
+  <audio id="musicaFeliz" loop hidden>
+    <source src="https://www.bensound.com/bensound-music/bensound-sunny.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Pantalla inicial -->
+  <div id="pantalla1" class="contenedor">
+    <h2>Con esto sí te va a perdonar... 🥺</h2>
+    <img src="gatito.pnj.jpg" alt="Gatito triste">
+    <h1>¿Me perdonas?</h1>
+    <div class="botones">
+      <button onclick="mostrarFinal()">Sí</button>
+      <button id="noBtn">No</button>
+    </div>
+  </div>
+
+  <!-- Pantalla final -->
+  <div id="pantalla2" class="final">
+    <img src="gatito.pnj.jpg" alt="Gatito feliz">
+    <div id="mensaje">¡Yo sabía que me perdonarías! 💖</div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const musicaTriste = document.getElementById("musicaTriste");
+    const musicaFeliz = document.getElementById("musicaFeliz");
+
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.floor(Math.random() * 300) - 150;
+      const y = Math.floor(Math.random() * 300) - 150;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+    function mostrarFinal() {
+      // Cambiar pantalla
+      document.getElementById("pantalla1").style.display = "none";
+      document.getElementById("pantalla2").style.display = "inline-block";
+      
+      // Cambiar música
+      musicaTriste.play();
+      musicaFeliz.play();
+    }
+  </script>
+
+</body>
+</html>
+
+
+
+
+
