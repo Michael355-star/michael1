@@ -1,0 +1,57 @@
+# Crear un archivo index.html con el contenido personalizado para Dandi Grefa
+html_content = """
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bienvenido a mi sitio</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2em;
+    }
+
+    .btn {
+      margin-top: 30px;
+      padding: 12px 24px;
+      background-color: #0af;
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 10px;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background-color: #08c;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hola, soy Dandi Grefa</h1>
+  <p>Bienvenido a mi primera página web publicada con GitHub Pages.</p>
+  <p>¡Estoy aprendiendo y logrando mis metas poco a poco! ??</p>
+  <a href="https://github.com/michael355-star" target="_blank" class="btn">Visita mi GitHub</a>
+</body>
+</html>
+"""
+
+# Guardar el archivo
+file_path = "/mnt/data/index.html"
+with open(file_path, "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+file_path
